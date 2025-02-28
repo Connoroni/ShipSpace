@@ -3,19 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #33b6e5a9;
+  --border: #3386e5bc;
+  --foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-image: url("../../public/assets/space_background.jpg");
+  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,0 +1,25 @@
+.fullPage {
+  background-color: var(--background);
+  border: var(--border) 3px solid;
+  border-radius: 2.5%;
+  width: 90%;
+  height: fit-content;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.topDiv {
+  padding-bottom: 1rem;
+}
+.title {
+  font-size: 2rem;
+}
+
+.contentDiv {
+  padding-bottom: 1rem;
+}
+.subheading {
+  font-size: 1.5rem;
+}
