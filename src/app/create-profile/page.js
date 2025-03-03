@@ -32,8 +32,6 @@ export default async function CreateProfile() {
       <form action={handleSubmit}>
         <label htmlFor="username">Choose a username:</label>
         <input type="text" name="username" id="username" />
-        <label htmlFor="email">Your e-mail address:</label>
-        <input type="text" name="email" id="email" />
         <label htmlFor="profile_pic">Upload a profile picture:</label>
         <input type="text" name="profile_pic" id="profile_pic" />
         <label htmlFor="bio">Write a short bio:</label>
