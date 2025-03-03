@@ -32,7 +32,7 @@ export default function Header() {
       <nav className={styles.nav}>
         <Link href="#">About</Link>
         <Link href="#">Tags</Link>
-        <Link href="#">idk</Link>
+        <Link href="#">Top Articles</Link>
         <Link href="#">anything else that might go in the header</Link>
       </nav>
     </header>
