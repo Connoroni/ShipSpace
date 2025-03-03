@@ -13,20 +13,39 @@ export default async function CreateProfile() {
 
     const formData = {
       clerk_id: idJson,
+      username: formValues.get("username"),
       email: emailJson,
-      //   use formValues.get() here to get the values of each of the inputs before submitting
+      profile_pic: formValues.get("profile_pic"),
+      bio: formValues.get("bio"),
     };
 
-    db
-      .query
-      //   db query to insert form values
-      ();
+    db.query(
+      "INSERT INTO users (clerk_id, username, email, profile_pic, bio) VALUES ($1, $2, $3, $4, $5)",
+      [
+        formData.clerk_id,
+        formData.username,
+        formData.email,
+        formData.profile_pic,
+        formData.bio,
+      ]
+    );
     redirect("/");
   }
 
   return (
     <>
-      <h1>PLACEHOLDER</h1>
+      <h1>Create Profile</h1>
+      <form action={handleSubmit}>
+        <label htmlFor="username">Choose a username:</label>
+        <input type="text" name="username" id="username" />
+        <label htmlFor="profile_pic">Upload a profile picture:</label>
+        <input type="text" name="profile_pic" id="profile_pic" />
+        <label htmlFor="bio">Write a short bio:</label>
+        <input type="text" name="bio" id="bio" />
+        <button type="submit">Submit</button>
+      </form>
     </>
   );
 }
+
+//Need to add 'submitted' message
