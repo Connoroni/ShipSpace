@@ -11,7 +11,7 @@ export default async function ArticlePage({ params }) {
     ])
   ).rows;
   // console.log("Full page data:", pageData);
-  console.log("Initial traffic:", pageData[0].traffic);
+  // console.log("Initial traffic:", pageData[0].traffic);
   let newTraffic = parseInt(pageData[0].traffic, 10) + 1;
   db.query(
     `UPDATE articles
@@ -19,17 +19,24 @@ export default async function ArticlePage({ params }) {
     WHERE title = $2`,
     [newTraffic, titleParams.title]
   );
-  console.log("New traffic:", newTraffic);
+  // console.log("New traffic:", newTraffic);
+
+  const infoObject = (
+    await db.query(`SELECT * FROM info_box WHERE article_id = $1`, [
+      pageData[0].id,
+    ])
+  ).rows[0];
+  console.log("Info Box data:", infoObject);
 
   return (
     <>
       {pageData.map((article) => (
         <section className={styles.fullPage} key={article.id}>
+          <h1 className={styles.title}>{article.title}</h1>
           <div className={styles.topDiv}>
-            <h1 className={styles.title}>{article.title}</h1>
             <p>{article.intro}</p>
+            {infoObject ? <InfoBox info={infoObject} /> : null}
           </div>
-          {/* <InfoBox /> */}
           <section className={styles.mainContent}>
             <div className={styles.contentDiv}>
               {article?.sub1 ? (

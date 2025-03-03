@@ -6,9 +6,6 @@ const nextConfig = {
         protocol: "https",
         // ALL HOSTS ALLOWED WHILE TESTING, NOT A PERMANENT SOLUTION
         hostname: "**",
-        port: "",
-        pathname: "/**",
-        search: "",
       },
     ],
   },
