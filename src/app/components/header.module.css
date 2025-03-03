@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100vw;
+  background-color: var(--background);
+  border-bottom: var(--border) 2px solid;
+}
+
+.topRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+}
