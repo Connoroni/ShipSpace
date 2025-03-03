@@ -1,0 +1,17 @@
+.infoBox {
+  background: #232627;
+  border: whitesmoke solid 1px;
+  min-width: fit-content;
+  width: 15vw;
+}
+
+.infoBoxSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: inherit;
+  border: inherit;
+  padding-bottom: 0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
