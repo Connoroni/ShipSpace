@@ -10,7 +10,16 @@ export default async function ArticlePage({ params }) {
       titleParams.title,
     ])
   ).rows;
-  console.log(pageData);
+  // console.log("Full page data:", pageData);
+  console.log("Initial traffic:", pageData[0].traffic);
+  let newTraffic = parseInt(pageData[0].traffic, 10) + 1;
+  db.query(
+    `UPDATE articles
+    SET traffic = $1
+    WHERE title = $2`,
+    [newTraffic, titleParams.title]
+  );
+  console.log("New traffic:", newTraffic);
 
   return (
     <>
