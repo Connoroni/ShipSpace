@@ -21,7 +21,13 @@ export default async function CreateProfile() {
 
     db.query(
       "INSERT INTO users (clerk_id, username, email, profile_pic, bio) VALUES ($1, $2, $3, $4, $5)",
-      [clerk_id, username, email, profile_pic, bio]
+      [
+        formData.clerk_id,
+        formData.username,
+        formData.email,
+        formData.profile_pic,
+        formData.bio,
+      ]
     );
     redirect("/");
   }
