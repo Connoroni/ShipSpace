@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
+        // protocol: "https",
         // ALL HOSTS ALLOWED WHILE TESTING, NOT A PERMANENT SOLUTION
         hostname: "**",
       },
