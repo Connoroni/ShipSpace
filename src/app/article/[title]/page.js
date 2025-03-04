@@ -1,6 +1,6 @@
 import { db } from "@/utils/dbConnectionString";
 import Image from "next/image";
-import InfoBox from "@/app/components/InfoBox";
+import InfoBox from "@/components/InfoBox";
 import styles from "./article.module.css";
 
 export default async function ArticlePage({ params }) {
