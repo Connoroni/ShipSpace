@@ -161,3 +161,13 @@
 //   ('Alien'),
 //   ('2001: A Space Odyssey'),
 //   ('OTHER');
+
+//! Altering articles table to make titles unique, then creating tag_junction table using article title instead of id
+// ALTER TABLE articles
+// ADD UNIQUE (title);
+
+// CREATE TABLE IF NOT EXISTS tag_junction(
+//   PRIMARY KEY (article_title, tag_id),
+//   article_title VARCHAR(255) REFERENCES articles(title),
+//   tag_id BIGINT REFERENCES tags(id)
+// )
