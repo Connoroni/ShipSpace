@@ -5,6 +5,7 @@ export default function HomePage() {
         <>
         <div className="info">
             <h1>Home page</h1>
+            
             <p>some info</p>
         </div>
         </>
