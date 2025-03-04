@@ -2,6 +2,7 @@ import { db } from "@/utils/dbConnectionString";
 import Image from "next/image";
 import InfoBox from "@/components/InfoBox";
 import styles from "./article.module.css";
+import { notFound } from "next/navigation";
 
 export default async function ArticlePage({ params }) {
   const titleParams = await params;
@@ -12,7 +13,12 @@ export default async function ArticlePage({ params }) {
   ).rows;
   // console.log("Full page data:", pageData);
   // console.log("Initial traffic:", pageData[0].traffic);
-  let newTraffic = parseInt(pageData[0].traffic, 10) + 1;
+
+  if (pageData.length===0) {
+    notFound();
+  }
+
+  let newTraffic = parseInt(pageData[0]?.traffic, 10) + 1;
   db.query(
     `UPDATE articles
     SET traffic = $1
@@ -27,6 +33,8 @@ export default async function ArticlePage({ params }) {
     ])
   ).rows[0];
   console.log("Info Box data:", infoObject);
+
+ 
 
   return (
     <>
