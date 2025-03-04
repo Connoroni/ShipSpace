@@ -120,3 +120,44 @@
 
 // ALTER TABLE info_box
 // ADD alt VARCHAR(255);
+
+//! Adding list of tags to the database
+// INSERT INTO tags (tag_name)
+// VALUES
+//   ('Small'),
+//   ('Medium'),
+//   ('Large'),
+//   ('Star Wars'),
+//   ('Star Trek'),
+//   ('Firefly'),
+//   ('Stargate'),
+//   ('The Expanse'),
+//   ('Dune'),
+//   ('Futurama'),
+//   ('Close Encounters of the Third Kind'),
+//   ('Independence Day'),
+//   ('Doctor Who'),
+//   ('Hitchiker''s Guide to the Galaxy'),
+//   ('Marvel'),
+//   ('DC'),
+//   ('Red Dwarf'),
+//   ('Babylon 5'),
+//   ('Gurren Lagann'),
+//   ('Cowboy Bebop'),
+//   ('Destiny'),
+//   ('Halo'),
+//   ('Battlestar Galactica'),
+//   ('Thunderbirds'),
+//   ('No Man''s Sky'),
+//   ('Elite Dangerous'),
+//   ('EVE Online'),
+//   ('Star Citizen'),
+//   ('Homeworld'),
+//   ('Stellaris'),
+//   ('Sins of a Solar Empire'),
+//   ('Dragon Ball'),
+//   ('Warhammer 40K'),
+//   ('Mass Effect'),
+//   ('Alien'),
+//   ('2001: A Space Odyssey'),
+//   ('OTHER');
