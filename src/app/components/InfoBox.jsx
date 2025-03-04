@@ -8,7 +8,7 @@ export default function InfoBox(props) {
         <h2>{props.info.name}</h2>
         <Image
           src={props.info.image}
-          alt="USER SUBMITTED ALT HERE BUT NOT YET"
+          alt={props.info.alt}
           width={100}
           height={100}
         />
