@@ -109,7 +109,7 @@
 //     'Exploration Craft'
 //     );
 
-//! Altering articles table to add traffic and alt text
+//! Altering articles and info_box tables to add traffic and alt text
 // ALTER TABLE articles
 // ADD traffic BIGINT;
 
@@ -117,3 +117,6 @@
 // ADD alt1 VARCHAR(255),
 // ADD alt2 VARCHAR(255),
 // ADD alt3 VARCHAR(255);
+
+// ALTER TABLE info_box
+// ADD alt VARCHAR(255);
