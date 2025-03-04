@@ -13,7 +13,7 @@ export default async function Tags() {
           <ul className={styles.allTags}>
             {tagList.map((tag) => (
               <li key={tag.id}>
-                &bull;&nbsp;<Link href="#">{tag.tag_name}</Link>
+                &bull;&nbsp;<Link href={`/tags/${tag.id}`}>{tag.tag_name}</Link>
               </li>
             ))}
           </ul>
