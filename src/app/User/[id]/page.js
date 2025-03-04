@@ -1,5 +1,6 @@
 import { db } from "@/utils/dbConnectionString";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 export default async function UserPage({ params }) {
     const slug = await params;
     console.log(slug);
@@ -7,6 +8,10 @@ export default async function UserPage({ params }) {
 
     const wrangledUser = user.rows;
     console.log(wrangledUser);
+
+    if (wrangledUser.length===0) {
+        notFound();
+    }
 
 
     return (
