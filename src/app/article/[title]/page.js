@@ -56,7 +56,7 @@ export default async function ArticlePage({ params }) {
               {article?.img1 ? (
                 <Image
                   src={article?.img1}
-                  alt="This is a user submitted image without alt text, I should alter the table later to enable alt text."
+                  alt={article?.alt1}
                   height={200}
                   width={200}
                 />
@@ -72,7 +72,7 @@ export default async function ArticlePage({ params }) {
               {article?.img2 ? (
                 <Image
                   src={article?.img2}
-                  alt="This is a user submitted image without alt text, I should alter the table later to enable alt text."
+                  alt={article?.alt2}
                   height={200}
                   width={200}
                 />
@@ -88,7 +88,7 @@ export default async function ArticlePage({ params }) {
               {article?.img3 ? (
                 <Image
                   src={article?.img3}
-                  alt="This is a user submitted image without alt text, I should alter the table later to enable alt text."
+                  alt={article?.alt3}
                   height={200}
                   width={200}
                 />
