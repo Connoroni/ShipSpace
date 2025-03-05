@@ -38,6 +38,9 @@ export default async function ArticlePage({ params }) {
   return (
   <>
  <Link href={/article/update-article}>
+ <button>
+  Edit this article.
+ </button>
  </Link>
       {pageData.map((article) => (
         <section className={styles.fullPage} key={article.id}>
