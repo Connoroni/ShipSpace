@@ -36,12 +36,10 @@ export default async function ArticlePage({ params }) {
   console.log("Info Box data:", infoObject);
 
   return (
-  <>
- <Link href={/article/${title.params}/update-article}>
- <button>
-  Edit this article.
- </button>
- </Link>
+    <>
+      <Link href={"/article/${title.params}/update-article"}>
+        <button>Edit this article.</button>
+      </Link>
       {pageData.map((article) => (
         <section className={styles.fullPage} key={article.id}>
           <h1 className={styles.title}>{article.title}</h1>
