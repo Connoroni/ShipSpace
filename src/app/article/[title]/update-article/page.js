@@ -1,12 +1,42 @@
 import { db } from "@/utils/dbConnectionString";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 export default async function UpdateArticle({ params }) {
 
     const slug = await params;
 
  const oneArticle = await db.query(`SELECT * FROM articles WHERE title = $1`, [slug.title,]);
+ console.log(oneArticle);
 
-    async function handleUpdate() {
+ const wrangledArticle = oneArticle.rows[0];
+ console.log(wrangledArticle);
+
+    async function handleUpdate(formData) {
         "use server";
+
+        const title = formData.get("title");
+        const intro = formData.get("intro");
+        const sub1 = formData.get("sub1");
+        const content1 = formData.get("content1");
+        const img1 = formData.get("img1");
+        const alt1 = formData.get("alt1");
+        const sub2 = formData.get("sub2");
+        const content2 = formData.get("content2");
+        const img2 = formData.get("img2");
+        const alt2 = formData.get("alt2");
+        const sub3 = formData.get("sub3");
+        const content3 = formData.get("content3");
+        const img3 = formData.get("img3");
+        const alt3 = formData.get("alt3");
+
+        await db.query(`UPDATE articles SET title = $1, intro = $2, sub1 = $3, content1 = $4, img1 = $5, alt1 = $6, sub2 = $7, content2 = $8, img2 = $9, alt2 = $10, sub3 = $11, content3 = $12, img3 = $13, alt3 = $14 WHERE title = $15`,
+            [title, intro, sub1, content1, img1, alt1, sub2, content2, img2, alt2, sub3, content3, img3, alt3, slug.title]
+        );
+
+        revalidatePath("/article");
+        revalidatePath(`/article/${slug.title}`);
+        redirect(`/article/${slug.title}`);
+
     }
 
 
@@ -21,7 +51,7 @@ export default async function UpdateArticle({ params }) {
                     name="title" 
                     id="title" 
                     className="text-black"
-                    defaultValue={oneArticle.title}
+                    defaultValue={wrangledArticle.title}
                     />
 
                     <label htmlFor="intro">Introduce your ship: </label>
@@ -29,7 +59,7 @@ export default async function UpdateArticle({ params }) {
                     name="intro" 
                     id="intro" 
                     className="text-black"
-                    defaultValue={oneArticle.intro}
+                    defaultValue={wrangledArticle.intro}
                     />
 
                     <label htmlFor="">Subheading1: </label>
@@ -38,7 +68,7 @@ export default async function UpdateArticle({ params }) {
                     name="sub1" 
                     id="sub1" 
                     className="text-black"
-                    defaultValue={oneArticle.sub1}
+                    defaultValue={wrangledArticle.sub1}
                     />
 
                      <label htmlFor="">Subheading1 details: </label>
@@ -46,7 +76,7 @@ export default async function UpdateArticle({ params }) {
                     name="content1" 
                     id="content1" 
                     className="text-black"
-                    defaultValue={oneArticle.content1}
+                    defaultValue={wrangledArticle.content1}
                     />
 
                     <label htmlFor="">image: </label>
@@ -54,7 +84,7 @@ export default async function UpdateArticle({ params }) {
                     name="img1" 
                     id="img1" 
                     className="text-black"
-                    defaultValue={oneArticle.img1}
+                    defaultValue={wrangledArticle.img1}
                     />
 
                     <label htmlFor="">image discription: </label>
@@ -62,7 +92,7 @@ export default async function UpdateArticle({ params }) {
                     name="alt1" 
                     id="alt1" 
                     className="text-black"
-                    defaultValue={oneArticle.alt1}
+                    defaultValue={wrangledArticle.alt1}
                     />
 
                    <label htmlFor="">Subheading2: </label>
@@ -71,7 +101,7 @@ export default async function UpdateArticle({ params }) {
                     name="sub2" 
                     id="sub2" 
                     className="text-black"
-                    defaultValue={oneArticle.sub2}
+                    defaultValue={wrangledArticle.sub2}
                     />
 
                      <label htmlFor="">Subheading2 details: </label>
@@ -79,45 +109,57 @@ export default async function UpdateArticle({ params }) {
                     name="content2" 
                     id="content2" 
                     className="text-black"
-                    defaultValue={oneArticle.content2}
+                    defaultValue={wrangledArticle.content2}
                     />
 
                     <label htmlFor="">image: </label>
                     <input type="URL" 
                     name="img2" 
                     id="img2" 
-                    className="text-black"/>
+                    className="text-black"
+                    defaultValue={wrangledArticle.img2}
+                    />
 
                     <label htmlFor="">image discription: </label>
                     <input type="text" 
                     name="alt2" 
                     id="alt2" 
-                    className="text-black"/>
+                    className="text-black"
+                    defaultValue={wrangledArticle.alt2}
+                    />
 
                    <label htmlFor="">Subheading3: </label>
                     <input type= "text" 
                     placeholder= "E.g Battles, Details, Trivia"
                     name="sub3" 
                     id="sub3" 
-                    className="text-black"/>
+                    className="text-black"
+                    defaultValue={wrangledArticle.sub3}
+                    />
 
                      <label htmlFor="">Subheading3 details: </label>
                     <input type="text" 
                     name="content3" 
                     id="content3" 
-                    className="text-black"/>
+                    className="text-black"
+                    defaultValue={wrangledArticle.content3}
+                    />
 
                     <label htmlFor="">image: </label>
                     <input type="URL" 
                     name="img3" 
                     id="img3" 
-                    className="text-black"/>
+                    className="text-black"
+                    defaultValue={wrangledArticle.img3}
+                    />
 
                     <label htmlFor="">image discription: </label>
                     <input type="text" 
                     name="alt3" 
                     id="alt3" 
-                    className="text-black"/>
+                    className="text-black"
+                    defaultValue={wrangledArticle.alt3}
+                    />
 
 
 
