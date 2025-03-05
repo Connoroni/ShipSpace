@@ -1,5 +1,6 @@
 import { db } from "@/utils/dbConnectionString";
 import Link from "next/link";
+import styles from "../tags.module.css";
 
 export default async function TagPage({ params }) {
   const tagParams = await params;
@@ -13,20 +14,22 @@ export default async function TagPage({ params }) {
       [tagParams.tag]
     )
   ).rows;
-  console.log(tagData);
+  //   console.log(tagData);
   return (
     <>
-      <h1>{tagData[0].tag_name} Ships</h1>
-      <div>
-        <ul>
-          {tagData.map((article) => (
-            <li key={article.title}>
-              &bull;&nbsp;
-              <Link href={`/article/${article.title}`}>{article.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <section className={styles.fullPage}>
+        <h1 className={styles.title}>{tagData[0].tag_name} Ships</h1>
+        <div className={styles.tagDiv}>
+          <ul className={styles.allTags}>
+            {tagData.map((article) => (
+              <li key={article.title}>
+                &bull;&nbsp;
+                <Link href={`/article/${article.title}`}>{article.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   );
 }
