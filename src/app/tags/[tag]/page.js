@@ -4,11 +4,11 @@ import styles from "../tags.module.css";
 
 export default async function TagPage({ params }) {
   const tagParams = await params;
-  console.log("Tag params:", tagParams);
+  //   console.log("Tag params:", tagParams);
   const tagName = (
     await db.query(`SELECT * FROM tags WHERE id = $1`, [tagParams.tag])
   ).rows;
-  console.log("Tag name:", tagName);
+  //   console.log("Tag name:", tagName);
   const tagData = (
     await db.query(
       `SELECT articles.title, tags.tag_name FROM articles
