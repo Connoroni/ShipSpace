@@ -37,7 +37,7 @@ export default async function ArticlePage({ params }) {
 
   return (
   <>
- <Link href={/article/update-article}>
+ <Link href={/article/${title.params}/update-article}>
  <button>
   Edit this article.
  </button>
