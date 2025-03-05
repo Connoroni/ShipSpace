@@ -41,6 +41,16 @@ body {
   display: grid;
 }
 
-canvas {
-  height: 500px !important;
+/* canvas {
+  height: 100vh !important;
+} */
+
+.canvas-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.canvas1, .canvas2 {
+  flex: 1;
+  height: 400px;
 }

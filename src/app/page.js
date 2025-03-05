@@ -4,7 +4,8 @@ import { useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Image from "next/image";
-import Shipmodel from "../components/Shipmodel";
+import FFragnarokmodel from "../components/FFragnarokmodel";
+import SWstardestroyermodel from "../components/SWstardestroyermodel";
 export default function HomePage() {
   return (
     <>
@@ -12,14 +13,30 @@ export default function HomePage() {
         <h1>Home page</h1>
         <p>some info</p>
       </div>
-      <Canvas>
-        <ambientLight intensity={2} />
-        <OrbitControls />
-        <Suspense fallback={null}>
-          <Shipmodel />
-        </Suspense>
-        <Environment preset="sunset" />
-      </Canvas>
+
+      <div className="canvas-container">
+        <div className="canvas1">
+          <Canvas>
+            <ambientLight intensity={2} />
+            <OrbitControls />
+            <Suspense fallback={null}>
+              <FFragnarokmodel />
+            </Suspense>
+            <Environment preset="sunset" />
+          </Canvas>
+        </div>
+
+        <div className="canvas2">
+          <Canvas>
+            <ambientLight intensity={2} />
+            <OrbitControls />
+            <Suspense fallback={null}>
+              <SWstardestroyermodel />
+            </Suspense>
+            <Environment preset="sunset" />
+          </Canvas>
+        </div>
+      </div>
     </>
   );
 }
