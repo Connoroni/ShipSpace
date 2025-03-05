@@ -4,8 +4,8 @@
 
 * {
   box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 :root {
@@ -33,11 +33,14 @@ body {
 }
 
 .navbar ul {
-  display:flex;
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
 }
 
 .info {
   display: grid;
-  
+}
+
+canvas {
+  height: 500px !important;
 }

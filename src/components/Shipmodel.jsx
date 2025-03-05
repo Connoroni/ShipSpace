@@ -13,7 +13,7 @@ import { useGLTF } from "@react-three/drei";
 export default function Model(props) {
   const { nodes, materials } = useGLTF("/shipmodel.gltf");
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} scale={[0.1, 0.1, 0.1]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh
           geometry={nodes.Object_2.geometry}

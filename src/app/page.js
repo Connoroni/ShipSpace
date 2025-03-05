@@ -1,13 +1,25 @@
+"use client";
+
+import { useState, Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Environment } from "@react-three/drei";
 import Image from "next/image";
-import { Accessibility } from "accessibility";
+import Shipmodel from "../components/Shipmodel";
 export default function HomePage() {
-    return (
-        <>
-        <div className="info">
-            <h1>Home page</h1>
-            <p>some info</p>
-        
-        </div>
-        </>
-    );
+  return (
+    <>
+      <div className="info">
+        <h1>Home page</h1>
+        <p>some info</p>
+      </div>
+      <Canvas>
+        <ambientLight intensity={2} />
+        <OrbitControls />
+        <Suspense fallback={null}>
+          <Shipmodel />
+        </Suspense>
+        <Environment preset="sunset" />
+      </Canvas>
+    </>
+  );
 }
