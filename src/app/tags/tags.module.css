@@ -27,3 +27,9 @@
   height: 80vh;
   width: 75vw;
 }
+
+.noTagsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}

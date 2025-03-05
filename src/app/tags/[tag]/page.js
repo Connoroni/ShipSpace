@@ -5,6 +5,10 @@ import styles from "../tags.module.css";
 export default async function TagPage({ params }) {
   const tagParams = await params;
   console.log("Tag params:", tagParams);
+  const tagName = (
+    await db.query(`SELECT * FROM tags WHERE id = $1`, [tagParams.tag])
+  ).rows;
+  console.log("Tag name:", tagName);
   const tagData = (
     await db.query(
       `SELECT articles.title, tags.tag_name FROM articles
@@ -14,21 +18,37 @@ export default async function TagPage({ params }) {
       [tagParams.tag]
     )
   ).rows;
+
   //   console.log(tagData);
   return (
     <>
       <section className={styles.fullPage}>
-        <h1 className={styles.title}>{tagData[0].tag_name} Ships</h1>
-        <div className={styles.tagDiv}>
-          <ul className={styles.allTags}>
-            {tagData.map((article) => (
-              <li key={article.title}>
-                &bull;&nbsp;
-                <Link href={`/article/${article.title}`}>{article.title}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <h1 className={styles.title}>{tagName[0].tag_name} Ships</h1>
+
+        {tagData.length < 0 ? (
+          <div className={styles.tagDiv}>
+            <ul className={styles.allTags}>
+              {tagData.map((article) => (
+                <li key={article.title}>
+                  &bull;&nbsp;
+                  <Link href={`/article/${article.title}`}>
+                    {article.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div className={styles.noTagsDiv}>
+            <p>
+              There are currently no article featuring this tag. Do you want to
+              make one?
+            </p>
+            <Link href="/new-article">Create an article</Link>
+            <Link href="/tags">View all tags</Link>
+            <Link href="/">Go home</Link>
+          </div>
+        )}
       </section>
     </>
   );
