@@ -14,7 +14,7 @@ export default async function UpdateArticle({ params }) {
     async function handleUpdate(formData) {
         "use server";
 
-        const title = formData.get("title");
+        // const title = formData.get("title");
         const intro = formData.get("intro");
         const sub1 = formData.get("sub1");
         const content1 = formData.get("content1");
@@ -29,8 +29,8 @@ export default async function UpdateArticle({ params }) {
         const img3 = formData.get("img3");
         const alt3 = formData.get("alt3");
 
-        await db.query(`UPDATE articles SET title = $1, intro = $2, sub1 = $3, content1 = $4, img1 = $5, alt1 = $6, sub2 = $7, content2 = $8, img2 = $9, alt2 = $10, sub3 = $11, content3 = $12, img3 = $13, alt3 = $14 WHERE title = $15`,
-            [title, intro, sub1, content1, img1, alt1, sub2, content2, img2, alt2, sub3, content3, img3, alt3, slug.title]
+        await db.query(`UPDATE articles SET intro = $1, sub1 = $2, content1 = $3, img1 = $4, alt1 = $5, sub2 = $6, content2 = $7, img2 = $8, alt2 = $9, sub3 = $10, content3 = $11, img3 = $12, alt3 = $13 WHERE title = $14`,
+            [intro, sub1, content1, img1, alt1, sub2, content2, img2, alt2, sub3, content3, img3, alt3, slug.title]
         );
 
         revalidatePath("/article");
@@ -46,13 +46,13 @@ export default async function UpdateArticle({ params }) {
         <h1>Update the article</h1>
         <p>Article: {slug.title}</p>
         <form action={handleUpdate}>
-        <label htmlFor="title">Shipname: </label>
+        {/* <label htmlFor="title">Shipname: </label>
                     <input type="text" 
                     name="title" 
                     id="title" 
                     className="text-black"
                     defaultValue={wrangledArticle.title}
-                    />
+                    /> */}
 
                     <label htmlFor="intro">Introduce your ship: </label>
                     <input type="text" 
