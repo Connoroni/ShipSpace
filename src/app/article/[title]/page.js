@@ -3,6 +3,7 @@ import Image from "next/image";
 import InfoBox from "@/components/InfoBox";
 import styles from "./article.module.css";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export default async function ArticlePage({ params }) {
   const titleParams = await params;
@@ -14,7 +15,7 @@ export default async function ArticlePage({ params }) {
   // console.log("Full page data:", pageData);
   // console.log("Initial traffic:", pageData[0].traffic);
 
-  if (pageData.length===0) {
+  if (pageData.length === 0) {
     notFound();
   }
 
@@ -34,10 +35,10 @@ export default async function ArticlePage({ params }) {
   ).rows[0];
   console.log("Info Box data:", infoObject);
 
- 
-
   return (
-    <>
+  <>
+ <Link href={/article/update-article}>
+ </Link>
       {pageData.map((article) => (
         <section className={styles.fullPage} key={article.id}>
           <h1 className={styles.title}>{article.title}</h1>
