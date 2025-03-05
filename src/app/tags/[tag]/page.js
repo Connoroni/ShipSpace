@@ -25,7 +25,7 @@ export default async function TagPage({ params }) {
       <section className={styles.fullPage}>
         <h1 className={styles.title}>{tagName[0].tag_name} Ships</h1>
 
-        {tagData.length < 0 ? (
+        {tagData.length > 0 ? (
           <div className={styles.tagDiv}>
             <ul className={styles.allTags}>
               {tagData.map((article) => (
