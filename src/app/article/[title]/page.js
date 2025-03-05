@@ -37,9 +37,6 @@ export default async function ArticlePage({ params }) {
 
   return (
     <>
-      <Link href={"/article/${title.params}/update-article"}>
-        <button>Edit this article.</button>
-      </Link>
       {pageData.map((article) => (
         <section className={styles.fullPage} key={article.id}>
           <h1 className={styles.title}>{article.title}</h1>
@@ -96,6 +93,9 @@ export default async function ArticlePage({ params }) {
                 />
               ) : null}
             </div>
+            <Link href={"/article/${titleParams.title}/update-article"}>
+        <button>Edit this article</button>
+      </Link>
           </section>
         </section>
       ))}
