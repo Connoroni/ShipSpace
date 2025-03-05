@@ -93,9 +93,9 @@ export default async function ArticlePage({ params }) {
                 />
               ) : null}
             </div>
-            <Link href={"/article/${titleParams.title}/update-article"}>
-        <button>Edit this article</button>
-      </Link>
+            <Link href={"/article/${title.Params.title}/update-article"}>
+              <button>Edit this article</button>
+            </Link>
           </section>
         </section>
       ))}
