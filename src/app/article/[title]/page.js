@@ -8,10 +8,16 @@ import Link from "next/link";
 export async function generateMetadata({params}) {
   const articleParams = await params;
   const pageData = (
-    await db.query("Select * from articles WHERE title= $1",[
+    await db.query(`Select * from articles WHERE title= $1`,[
       articleParams.title
     ]))
-};
+
+    return {
+      title:`${pageData.title} - Ship Space`,
+      description:  pageData.intro
+    };   
+}
+
 
 
 export default async function ArticlePage({ params }) {
