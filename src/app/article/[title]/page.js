@@ -5,10 +5,9 @@ import styles from "./article.module.css";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-export async function generateMetadata({ params }){
+export async function generateMetadata({ params }) {
   const articleParams = await params;
-  const pageData = result.rows[0];
-  await db.query(`Select * from articles WHERE title= $1`, [
+  const pageData = await db.query(`Select * from articles WHERE title= $1`, [
     articleParams.title,
   ]);
   return {
