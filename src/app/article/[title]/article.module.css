@@ -1,13 +1,25 @@
+:root {
+  --primary-color: #0a0f1a;
+  --secondary-color: #1f2937;
+  --accent-color: #00d9ff;
+  --text-color: #d1d5db;
+  --highlight: #4f46e5;
+}
+
 .fullPage {
-  background-color: var(--background);
-  border: var(--border) 3px solid;
-  border-radius: 2.5%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--highlight);
+  border-radius: 16px;
   width: 90%;
   height: fit-content;
-  padding: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.fullPage:hover {
+  transform: translateY(-5px);
 }
 
 .topDiv {
@@ -16,13 +28,46 @@
   justify-content: space-between;
   padding-bottom: 1rem;
 }
+
 .title {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 .contentDiv {
   padding-bottom: 1rem;
 }
+
 .subheading {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.textContent {
+  line-height: 1.6;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.image {
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
