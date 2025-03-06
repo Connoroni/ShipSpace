@@ -10,7 +10,7 @@ import SWstardestroyermodel from "../components/SWstardestroyermodel";
 export const metadata ={
   title:"Homepage - Ship Space",
   description:"Your intergalactic journey, starts here."
-}
+};
 
 export default function HomePage() {
   return (
