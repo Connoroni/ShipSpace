@@ -2,12 +2,11 @@ import { db } from "@/utils/dbConnectionString";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-
-export default function NewArticlePage()  {
-
-    async function handleSubmit(formValues) {
-        "use server";
+export default function NewArticlePage() {
+  async function handleSubmit(formValues) {
+    "use server";
     const formData = {
+
         title: formValues.get("title"),
               intro: formValues.get("intro"),
               sub1: formValues.get("sub1"),
@@ -145,3 +144,4 @@ export default function NewArticlePage()  {
                 </>
             )
         }
+

@@ -1,0 +1,36 @@
+.footer {
+  background-color: rgb(65, 65, 65);
+  width: 100vw;
+  min-height: fit-content;
+  height: 20vh;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.aside {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-right: 10vw;
+  width: fit-content;
+}
+
+.footerTitle {
+  font-weight: bold;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
