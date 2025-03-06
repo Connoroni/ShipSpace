@@ -33,6 +33,10 @@ export default function InfoBox(props) {
           {props.info?.height_unit}
         </p>
       </div>
+      <div className={styles.infoBoxSection}>
+        <p>Role/Class: {props.info?.role}</p>
+        <p>Weaponry: {props.info?.weaponry}</p>
+      </div>
     </div>
   );
 }

@@ -23,15 +23,17 @@ export default async function NewArticlePage() {
       img3: formValues.get("img3"),
       alt3: formValues.get("alt3"),
       image: formValues.get("info_image"),
+      alt: formValues.get("info_alt"),
       name: formValues.get("info_name"),
       origin: formValues.get("info_origin"),
-      length: formValues.get("info_length"),
+      info_length: formValues.get("info_length"),
       length_unit: formValues.get("length_unit"),
       width: formValues.get("info_width"),
       width_unit: formValues.get("width_unit"),
       height: formValues.get("info_height"),
       height_unit: formValues.get("height_unit"),
       role: formValues.get("info_role"),
+      weaponry: formValues.get("info_weaponry"),
       tag1: formValues.get("tag1"),
       tag2: formValues.get("tag2"),
     };
@@ -58,8 +60,9 @@ export default async function NewArticlePage() {
 
     db.query(
       `INSERT INTO info_box (
-  article_id,
+  article_title,
   image,
+  alt,
   name,
   origin,
   length,
@@ -68,7 +71,8 @@ export default async function NewArticlePage() {
   width_unit,
   height,
   height_unit,
-  role
+  role,
+  weaponry
   )
   VALUES (
   $1,
@@ -81,19 +85,23 @@ export default async function NewArticlePage() {
   $8,
   $9,
   $10,
-  $11)`,
+  $11,
+  $12,
+  $13)`,
       [
-        TITLE,
+        formData.title,
         formData.image,
+        formData.alt,
         formData.name,
         formData.origin,
-        formData.length,
+        formData.info_length,
         formData.length_unit,
         formData.width,
         formData.width_unit,
         formData.height,
         formData.height_unit,
         formData.role,
+        formData.weaponry,
       ]
     );
 
@@ -203,6 +211,8 @@ export default async function NewArticlePage() {
             id="info_image"
             placeholder="Enter the url of the info box image"
           />
+          <label htmlFor="info_alt">Image Description:</label>
+          <input type="text" name="info_alt" id="info_alt" />
           <label htmlFor="info_name">Full Ship Name:</label>
           <input
             type="text"
@@ -266,6 +276,13 @@ export default async function NewArticlePage() {
             name="info_role"
             id="info_role"
             placeholder="E.g. Battleship, Light Cruiser, Exploration Vessel"
+          />
+          <label htmlFor="info_weaponry">Ship Weaponry/Armaments:</label>
+          <input
+            type="text"
+            name="info_weaponry"
+            id="info_weaponry"
+            placeholder="E.g. 2 AG-2G quad laser cannons, 12 phaser arrays, 250 photon torpedoes"
           />
         </div>
 
