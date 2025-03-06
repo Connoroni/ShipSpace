@@ -5,6 +5,8 @@ import styles from "./article.module.css";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+export async function generateMetadata({params, seachParams}),
+
 export default async function ArticlePage({ params }) {
   const titleParams = await params;
   const pageData = (
