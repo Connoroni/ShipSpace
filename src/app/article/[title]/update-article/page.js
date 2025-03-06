@@ -235,7 +235,7 @@ export default async function UpdateArticle({ params }) {
             type="url"
             name="info_image"
             id="info_image"
-            defaultValue={infoData.image}
+            defaultValue={infoData?.image}
             placeholder="Enter the url of the info box image"
           />
           <label htmlFor="info_alt">Image Description:</label>
@@ -243,7 +243,7 @@ export default async function UpdateArticle({ params }) {
             type="text"
             name="info_alt"
             id="info_alt"
-            defaultValue={infoData.alt}
+            defaultValue={infoData?.alt}
           />
           <label htmlFor="info_name">Full Ship Name:</label>
           <input
@@ -251,7 +251,7 @@ export default async function UpdateArticle({ params }) {
             name="info_name"
             id="info_name"
             placeholder="Enter the name of the ship as it will appear in the info box"
-            defaultValue={infoData.name}
+            defaultValue={infoData?.name}
             required
           />
           <label htmlFor="info_origin">Ship origin:</label>
@@ -260,7 +260,7 @@ export default async function UpdateArticle({ params }) {
             name="info_origin"
             id="info_origin"
             placeholder="Enter the franchise, media, or universe the ship is from"
-            defaultValue={infoData.origin}
+            defaultValue={infoData?.origin}
             required
           />
           <div className="flex flex-row flex-nowrap">
@@ -269,14 +269,14 @@ export default async function UpdateArticle({ params }) {
               type="number"
               name="info_length"
               id="info_length"
-              defaultValue={infoData.length}
+              defaultValue={infoData?.length}
               required
             />
             <label htmlFor="length_unit">Units:</label>
             <select
               name="length_unit"
               id="length_unit"
-              defaultValue={infoData.length_unit}
+              defaultValue={infoData?.length_unit}
             >
               <option value="cm">cm</option>
               <option value="m">m</option>
@@ -293,14 +293,14 @@ export default async function UpdateArticle({ params }) {
               type="number"
               name="info_width"
               id="info_width"
-              defaultValue={infoData.width}
+              defaultValue={infoData?.width}
               required
             />
             <label htmlFor="width_unit">Units:</label>
             <select
               name="width_unit"
               id="width_unit"
-              defaultValue={infoData.width_unit}
+              defaultValue={infoData?.width_unit}
             >
               <option value="cm">cm</option>
               <option value="m">m</option>
@@ -317,14 +317,14 @@ export default async function UpdateArticle({ params }) {
               type="number"
               name="info_height"
               id="info_height"
-              defaultValue={infoData.height}
+              defaultValue={infoData?.height}
               required
             />
             <label htmlFor="height_unit">Units:</label>
             <select
               name="height_unit"
               id="height_unit"
-              defaultValue={infoData.height_unit}
+              defaultValue={infoData?.height_unit}
             >
               <option value="cm">cm</option>
               <option value="m">m</option>
@@ -340,7 +340,7 @@ export default async function UpdateArticle({ params }) {
             name="info_role"
             id="info_role"
             placeholder="E.g. Battleship, Light Cruiser, Exploration Vessel"
-            defaultValue={infoData.role}
+            defaultValue={infoData?.role}
           />
           <label htmlFor="info_weaponry">Ship Weaponry/Armaments:</label>
           <input
@@ -348,7 +348,7 @@ export default async function UpdateArticle({ params }) {
             name="info_weaponry"
             id="info_weaponry"
             placeholder="E.g. 2 AG-2G quad laser cannons, 12 phaser arrays, 250 photon torpedoes"
-            defaultValue={infoData.weaponry}
+            defaultValue={infoData?.weaponry}
           />
         </div>
 
