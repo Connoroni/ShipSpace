@@ -22,12 +22,12 @@ export default function HomePage() {
 
             <div className="canvas2">
           <Canvas>
-            <ambientLight intensity={2} />
+            <ambientLight intensity={0} />
             <OrbitControls />
             <Suspense fallback={null}>
               <SWstardestroyermodel />
             </Suspense>
-            <Environment preset="sunset" />
+            <Environment preset="studio" />
           </Canvas>
           </div>
         
