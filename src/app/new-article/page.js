@@ -2,6 +2,9 @@ import { db } from "@/utils/dbConnectionString";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
+export const metadata = {}
+
+
 export default function NewArticlePage() {
   async function handleSubmit(formValues) {
     "use server";
