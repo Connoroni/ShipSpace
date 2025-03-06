@@ -35,7 +35,7 @@ export default function Header() {
         <Link href="/tags">Tags</Link>
         <Link href="/spaceships">Space Ships</Link>
         <Link href="#">Top Articles</Link>
-        <Link href="#">anything else that might go in the header</Link>
+        <Link href="/new-article">Create Article</Link>
       </nav>
     </header>
   );
