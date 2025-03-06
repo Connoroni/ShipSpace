@@ -146,16 +146,17 @@ export default async function NewArticlePage() {
         <label htmlFor="tag1">Select a tag</label>
         <select id="tag1" name="tag1">
           {tagList.map((tag) => (
-            <option key={tag.id} value={tag.tag_name}>
+            <option key={tag.id} value={tag.id}>
               {tag.tag_name}
             </option>
           ))}
         </select>
 
+        <label htmlFor="tag2">Select a second tag, or leave it blank</label>
         <select id="tag2" name="tag2">
           <option value="none">N/A</option>
           {tagList.map((tag) => (
-            <option key={tag.id} value={tag.tag_name}>
+            <option key={tag.id} value={tag.id}>
               {tag.tag_name}
             </option>
           ))}
