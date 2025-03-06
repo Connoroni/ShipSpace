@@ -5,7 +5,16 @@ import { db } from "@/utils/dbConnectionString";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-
+export async function generateMetadata({ params }) {
+  const userParams = await params;
+  const pageData = await db.query(`Select * from users WHERE username= $1`, [
+    userParams.username,
+  ]);
+  return {
+    title: `${pageData.username} - Ship Space`,
+    description: `${pageData.username} profile page.`,
+  };
+}
 
 export default async function UserPage({ params }) {
   const { userId } = await auth();
