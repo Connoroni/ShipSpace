@@ -2,8 +2,14 @@ import { db } from "@/utils/dbConnectionString";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
+
+export const metadata = {
+  title:"New article - Ship Space",
+  description:"Create a new entry in the Ship Space database."
+};
 export default async function NewArticlePage() {
   const tagList = (await db.query(`SELECT * FROM tags ORDER BY tag_name`)).rows;
+
 
   async function handleSubmit(formValues) {
     "use server";
