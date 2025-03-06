@@ -4,53 +4,70 @@
 
 * {
   box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-  --background: #33b6e5a9;
-  --border: #3386e5bc;
+  --primary-color: #0a0f1a;
+  --secondary-color: #1f2937;
+  --accent-color: #00d9ff;
+  --text-color: #d1d5db;
+  --highlight: #4f46e5;
+  --background: rgba(10, 15, 26, 0.9);
+  --border: #4f46e5;
   --foreground: #ffffff;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
-  color: var(--foreground);
-  background-image: url("../../public/assets/space_background.jpg");
-  background-size: cover;
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  background: radial-gradient(circle, var(--primary-color) 30%, var(--secondary-color) 100%);
+  background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .header {
   text-align: center;
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 }
 
 .navbar ul {
   display: flex;
   justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--accent-color);
 }
 
 .info {
   display: grid;
+  gap: 1rem;
+  padding: 2rem;
 }
 
-/* canvas {
-  height: 100vh !important;
-} */
-
-.canvas-container{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.canvas1, .canvas2 {
-  flex: 1;
-  height: 400px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
