@@ -18,17 +18,7 @@ export default function HomePage() {
                 <p className={styles.subtitle}>Explore and upload starships from across the multiverse</p>
             </header>
 
-            <main className={styles.mainPanel}>
-                <section className={styles.infoCard}>
-                    <h2>Featured Starship</h2>
-                    <p>Discover iconic vessels from your favorite universes.</p>
-                </section>
-      <div className="info">
-        <h1>Home page</h1>
-        <p>some info</p>
-      </div>
-
-      <div className="canvas-container">
+      {/* <div className="canvas-container">
         <div className="canvas1">
           <Canvas>
             <ambientLight intensity={2} />
@@ -38,7 +28,7 @@ export default function HomePage() {
             </Suspense>
             <Environment preset="sunset" />
           </Canvas>
-        </div>
+        </div> */}
 
         <div className="canvas2">
           <Canvas>
@@ -50,14 +40,22 @@ export default function HomePage() {
             <Environment preset="sunset" />
           </Canvas>
 
+          <main className={styles.mainPanel}>
+                <section className={styles.infoCard}>
+                    <h2>Featured Starship</h2>
+                    <p>Discover iconic vessels from your favorite universes.</p>
+                    
+                </section>
+                </main>
+
  <section className={styles.controls}>
                     <button className={styles.uploadButton}>Upload Starship</button>
                     <button className={styles.exploreButton}>Explore Database</button>
                 </section>
-            </main>
+        
         </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }
