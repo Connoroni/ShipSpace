@@ -13,7 +13,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.topRow}>
         <Link href="/">
-          <h1>WEBSITE TITLE</h1>
+          <h1>SHIP SPACE</h1>
         </Link>
         <div>
           <SignedIn>
