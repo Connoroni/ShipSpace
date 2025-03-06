@@ -131,7 +131,7 @@ export default async function NewArticlePage() {
         <input type="text" name="title" id="title" className="text-black" />
 
         <label htmlFor="intro">Introduce your ship: </label>
-        <input type="text" name="intro" id="intro" className="text-black" />
+        <textarea name="intro" id="intro" className="text-black" />
 
         <label htmlFor="">Subheading1: </label>
         <input
@@ -143,12 +143,7 @@ export default async function NewArticlePage() {
         />
 
         <label htmlFor="">Subheading1 details: </label>
-        <input
-          type="text"
-          name="content1"
-          id="content1"
-          className="text-black"
-        />
+        <textarea name="content1" id="content1" className="text-black" />
 
         <label htmlFor="">image: </label>
         <input type="URL" name="img1" id="img1" className="text-black" />
@@ -166,12 +161,7 @@ export default async function NewArticlePage() {
         />
 
         <label htmlFor="">Subheading2 details: </label>
-        <input
-          type="text"
-          name="content2"
-          id="content2"
-          className="text-black"
-        />
+        <textarea name="content2" id="content2" className="text-black" />
 
         <label htmlFor="">image: </label>
         <input type="URL" name="img2" id="img2" className="text-black" />
@@ -189,12 +179,7 @@ export default async function NewArticlePage() {
         />
 
         <label htmlFor="">Subheading3 details: </label>
-        <input
-          type="text"
-          name="content3"
-          id="content3"
-          className="text-black"
-        />
+        <textarea name="content3" id="content3" className="text-black" />
 
         <label htmlFor="">image: </label>
         <input type="URL" name="img3" id="img3" className="text-black" />
