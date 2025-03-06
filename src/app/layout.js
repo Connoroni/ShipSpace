@@ -15,7 +15,14 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Ship Space",
-  description: "the space for all your favorite intergalactic ships",
+  description: "The space for all your favorite intergalactic ships",
+  OpenGraph: {
+    title: "Ship Space",
+    description: "The space for all your favourite intergalictic ships.",
+    type: "website",
+    url: "VERCEL DEPLOYMENT LINK HERE",
+    images: ["PREVIEW IMAGE LINK HERE"],
+  },
 };
 
 export default function RootLayout({ children }) {
