@@ -2,6 +2,17 @@ import { db } from "@/utils/dbConnectionString";
 import Link from "next/link";
 import styles from "../tags.module.css";
 
+export async function generateMetadata({ params }) {
+  const tagsParams = await params;
+  const pageData = await db.query(`Select * from tags WHERE tag_name= $1`, [
+    tagsParams.tagname,
+  ]);
+  return {
+    title: `${pageData.tagname} - Ship Space`,
+    description: `${pageData.tagname} ships.`,
+  };
+}
+
 export default async function TagPage({ params }) {
   const tagParams = await params;
   //   console.log("Tag params:", tagParams);

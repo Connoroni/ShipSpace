@@ -3,6 +3,12 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import styles from "./createprofile.module.css";
 
+export const metadata = {
+  title: "Create profile - Ship Space",
+  description: "Create your Ship Space profile."
+}
+
+
 export default async function CreateProfile() {
   const clerkUser = await currentUser();
   const emailJson = JSON.stringify(clerkUser.emailAddresses[0].emailAddress);
