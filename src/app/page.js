@@ -14,7 +14,7 @@ export default function HomePage() {
 
  <div className={styles.container}>
             <header className={styles.header}>
-                <h1 className={styles.title}>Galactic Starship Database</h1>
+                <h1 className={styles.title}>ShipSpace!</h1>
                 <p className={styles.subtitle}>Explore and upload starships from across the multiverse</p>
             </header>
 
@@ -42,7 +42,10 @@ export default function HomePage() {
 
           <main className={styles.mainPanel}>
                 <section className={styles.infoCard}>
-                    <h2>Featured Starship</h2>
+                    <h2>Featured Starship: Imperial Class Star Destroyer</h2>
+                    <br>
+                    
+                    </br>
                     <p>Discover iconic vessels from your favorite universes.</p>
                     
                 </section>

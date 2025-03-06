@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <aside className={styles.aside}>
-        <h1>WEBSITE TITLE</h1>
+        <h1>Ship Space</h1>
         <p>The home of your favourite spaceships.</p>
       </aside>
       <nav className={styles.nav}>

@@ -1,6 +1,7 @@
 import { db } from "@/utils/dbConnectionString";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import styles from "./createprofile.module.css";
 
 export default async function CreateProfile() {
   const clerkUser = await currentUser();
@@ -34,16 +35,21 @@ export default async function CreateProfile() {
 
   return (
     <>
-      <h1>Create Profile</h1>
+      <div className={styles.createProfile}>
+      <h1 className={styles.title}>Create Profile</h1>
       <form action={handleSubmit}>
-        <label htmlFor="username">Choose a username:</label>
-        <input type="text" name="username" id="username" />
-        <label htmlFor="profile_pic">Upload a profile picture:</label>
-        <input type="text" name="profile_pic" id="profile_pic" />
-        <label htmlFor="bio">Write a short bio:</label>
-        <input type="text" name="bio" id="bio" />
-        <button type="submit">Submit</button>
+        <label className={styles.formLabel} htmlFor="username">Choose a username:</label>
+        <input className={styles.formInput} type="text" name="username" id="username" />
+        
+        <label className={styles.formLabel} htmlFor="profile_pic">Upload a profile picture: [URL Only Please]</label>
+        <input className={styles.formInput} type="text" name="profile_pic" id="profile_pic" />
+        
+        <label className={styles.formLabel} htmlFor="bio">Write a short bio:</label>
+        <input className={styles.formInput} type="text" name="bio" id="bio" />
+        
+        <button className={styles.submitButton} type="submit">Submit</button>
       </form>
+    </div>
     </>
   );
 }
