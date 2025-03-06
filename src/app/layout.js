@@ -21,8 +21,7 @@ export const metadata = {
     title: "Ship Space",
     description: "The space for all your favourite intergalictic ships.",
     type: "website",
-    url: "VERCEL DEPLOYMENT LINK HERE",
-    images: ["PREVIEW IMAGE LINK HERE"],
+    url: "https://starship-hub.vercel.app/",
   },
 };
 
