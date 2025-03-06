@@ -33,8 +33,7 @@ export default function Header() {
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/tags">Tags</Link>
-        <Link href="/spaceships">Space Ships</Link>
-        <Link href="#">Top Articles</Link>
+        <Link href="/all-ships">Space Ships</Link>
         <Link href="/new-article">Create Article</Link>
       </nav>
     </header>
