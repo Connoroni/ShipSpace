@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Ship Space",
-  description: "The space for all your favorite intergalactic ships",
+  description: "The space for all your favorite intergalactic ships.",
   OpenGraph: {
     title: "Ship Space",
     description: "The space for all your favourite intergalictic ships.",

@@ -6,6 +6,12 @@ import { OrbitControls, Environment } from "@react-three/drei";
 import Image from "next/image";
 import FFragnarokmodel from "../components/FFragnarokmodel";
 import SWstardestroyermodel from "../components/SWstardestroyermodel";
+
+export const metadata ={
+  title:"Homepage - Ship Space",
+  description:"Your intergalactic journey, starts here."
+}
+
 export default function HomePage() {
   return (
     <>
