@@ -5,8 +5,7 @@ import { redirect } from "next/navigation";
 export const metadata = {
   title:"New article - Ship Space",
   description:"Create a new entry in the Ship Space database."
-}
-
+};
 
 export default function NewArticlePage() {
   async function handleSubmit(formValues) {
