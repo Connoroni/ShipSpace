@@ -1,6 +1,12 @@
 import { db } from "@/utils/dbConnectionString";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+export const metadata = {
+    title:"Update article - Ship Space",
+    description:"Update a Ship Space article."
+};
+
 export default async function UpdateArticle({ params }) {
 
     const slug = await params;
