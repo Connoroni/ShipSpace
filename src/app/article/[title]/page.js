@@ -5,6 +5,16 @@ import styles from "./article.module.css";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  const articleParams = await params;
+  const pageData = await db.query(`Select * from articles WHERE title= $1`, [
+    articleParams.title,
+  ]);
+  return {
+    title: `${pageData.title} - Ship Space`,
+    description: pageData.intro,
+  };
+}
 export default async function ArticlePage({ params }) {
   const titleParams = await params;
   const pageData = (
@@ -31,8 +41,7 @@ export default async function ArticlePage({ params }) {
   const infoObject = (
     await db.query(`SELECT * FROM info_box WHERE article_title = $1`, [
       titleParams.title,
-    ])
-  ).rows[0];
+    ])).rows[0];
   console.log("Info Box data:", infoObject);
 
   return (

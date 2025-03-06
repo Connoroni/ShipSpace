@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { useState, Suspense } from "react";
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Image from "next/image";
@@ -8,6 +8,8 @@ import Image from "next/image";
 import styles from "./home.module.css";
 import FFragnarokmodel from "../components/FFragnarokmodel";
 import SWstardestroyermodel from "../components/SWstardestroyermodel";
+
+
 export default function HomePage() {
   return (
     <>
