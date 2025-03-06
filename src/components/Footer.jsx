@@ -1,6 +1,10 @@
 import styles from "./footer.module.css";
 import Link from "next/link";
 
+import { twitter } from "@/../public/assets/twitter";
+import { github } from "@/../public/assets/github";
+import { instagram } from "@/../public/assets/instagram";
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -11,43 +15,28 @@ export default function Footer() {
       <nav className={styles.nav}>
         <h6 className={styles.footerTitle}>The Website</h6>
         <Link href="#" className={styles.link}>
-          Branding
-        </Link>
-        <Link href="#" className={styles.link}>
-          Design
-        </Link>
-        <Link href="#" className={styles.link}>
-          Marketing
-        </Link>
-        <Link href="#" className={styles.link}>
-          Advertisement
+          About Us
         </Link>
       </nav>
       <nav className={styles.nav}>
-        <h6 className={styles.footerTitle}>Company</h6>
-        <Link href="#" className={styles.link}>
-          About us
+        <h6 className={styles.footerTitle}>Social Media</h6>
+        <Link href="https://bsky.app/" className={styles.link}>
+          <div className={styles.social}>
+            {twitter} <p>&nbsp;Twitter</p>
+          </div>
         </Link>
-        <Link href="#" className={styles.link}>
-          Contact
+        <Link href="https://www.instagram.com/" className={styles.link}>
+          <div className={styles.social}>
+            {instagram} <p>&nbsp;Instagram</p>
+          </div>
         </Link>
-        <Link href="#" className={styles.link}>
-          Jobs
-        </Link>
-        <Link href="#" className={styles.link}>
-          Press kit
-        </Link>
-      </nav>
-      <nav className={styles.nav}>
-        <h6 className={styles.footerTitle}>Legal</h6>
-        <Link href="#" className={styles.link}>
-          Terms of use
-        </Link>
-        <Link href="#" className={styles.link}>
-          Privacy policy
-        </Link>
-        <Link href="#" className={styles.link}>
-          Cookie policy
+        <Link
+          href="https://github.com/Connoroni/Starship-Hub"
+          className={styles.link}
+        >
+          <div className={styles.social}>
+            {github} <p>&nbsp;Github</p>
+          </div>
         </Link>
       </nav>
     </footer>
