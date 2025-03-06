@@ -71,3 +71,8 @@ body {
     opacity: 1;
   }
 }
+
+.canvas2{
+  height: 50vh;
+  width: 100vh;
+}

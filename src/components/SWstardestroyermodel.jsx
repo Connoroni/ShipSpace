@@ -13,7 +13,7 @@ import { useGLTF } from "@react-three/drei";
 export default function Model(props) {
   const { nodes, materials } = useGLTF("/LOWRESimperial_i-class_star_destroyer.glb");
   return (
-    <group {...props} dispose={null} scale={[3.1, 3.1, 3.1]}>
+    <group {...props} dispose={null} scale={[10.1, 10.1, 10.1]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
