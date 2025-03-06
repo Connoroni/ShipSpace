@@ -1,10 +1,3 @@
-:root {
-  --primary-color: #0a0f1a;
-  --secondary-color: #1f2937;
-  --accent-color: #00d9ff;
-  --text-color: #d1d5db;
-  --highlight: #4f46e5;
-}
 
 .fullPage {
   background: rgba(255, 255, 255, 0.05);
