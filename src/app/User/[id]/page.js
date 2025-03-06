@@ -5,6 +5,8 @@ import { db } from "@/utils/dbConnectionString";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+
+
 export default async function UserPage({ params }) {
   const { userId } = await auth();
   if (!userId) {
