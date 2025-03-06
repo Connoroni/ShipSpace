@@ -5,7 +5,7 @@ import styles from "../tags.module.css";
 export async function generateMetadata({ params }) {
   const tagsParams = await params;
   const pageData = await db.query(`Select * from tags WHERE tag_name= $1`, [
-    tagParams.tagname,
+    tagsParams.tagname,
   ]);
   return {
     title: `${pageData.tagname} - Ship Space`,
