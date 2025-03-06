@@ -106,7 +106,7 @@ export default async function NewArticlePage() {
     );
 
     {
-      tag2 = null
+      formData.tag2 = null
         ? db.query(
             `INSERT INTO tag_junction (article_title, tag_id) 
       VALUES ($1, $2)`,

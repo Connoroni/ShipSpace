@@ -35,7 +35,9 @@ export default function InfoBox(props) {
       </div>
       <div className={styles.infoBoxSection}>
         <p>Role/Class: {props.info?.role}</p>
-        <p>Weaponry: {props.info?.weaponry}</p>
+      </div>
+      <div className={styles.infoBoxSection}>
+        <p className={styles.weaponry}>Weaponry: {props.info?.weaponry}</p>
       </div>
     </div>
   );
