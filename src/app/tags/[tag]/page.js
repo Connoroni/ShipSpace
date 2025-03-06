@@ -25,7 +25,8 @@ export default async function TagPage({ params }) {
       `SELECT articles.title, tags.tag_name FROM articles
         JOIN tag_junction ON articles.title = tag_junction.article_title
         JOIN tags ON tag_junction.tag_id = tags.id
-        WHERE tags.id = $1`,
+        WHERE tags.id = $1
+        ORDER BY articles.title`,
       [tagParams.tag]
     )
   ).rows;

@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 export default async function Tags() {
-  const tagList = (await db.query(`SELECT * FROM tags`)).rows;
+  const tagList = (await db.query(`SELECT * FROM tags ORDER BY tag_name`)).rows;
 
   return (
     <>
@@ -18,7 +18,7 @@ export default async function Tags() {
           <ul className={styles.allTags}>
             {tagList.map((tag) => (
               <li key={tag.id}>
-                &bull;&nbsp;<Link href={`/tags/${tag.id}`}>{tag.tag_name}</Link>
+                <Link href={`/tags/${tag.id}`}>{tag.tag_name}</Link>
               </li>
             ))}
           </ul>
