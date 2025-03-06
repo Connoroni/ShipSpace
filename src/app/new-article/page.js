@@ -22,6 +22,16 @@ export default async function NewArticlePage() {
       content3: formValues.get("content3"),
       img3: formValues.get("img3"),
       alt3: formValues.get("alt3"),
+      image: formValues.get("info_image"),
+      name: formValues.get("info_name"),
+      origin: formValues.get("info_origin"),
+      length: formValues.get("info_length"),
+      length_unit: formValues.get("length_unit"),
+      width: formValues.get("info_width"),
+      width_unit: formValues.get("width_unit"),
+      height: formValues.get("info_height"),
+      height_unit: formValues.get("height_unit"),
+      role: formValues.get("info_role"),
       tag1: formValues.get("tag1"),
       tag2: formValues.get("tag2"),
     };
@@ -46,8 +56,49 @@ export default async function NewArticlePage() {
       ]
     );
 
+    db.query(
+      `INSERT INTO info_box (
+  article_id,
+  image,
+  name,
+  origin,
+  length,
+  length_unit,
+  width,
+  width_unit,
+  height,
+  height_unit,
+  role
+  )
+  VALUES (
+  $1,
+  $2,
+  $3,
+  $4,
+  $5,
+  $6,
+  $7,
+  $8,
+  $9,
+  $10,
+  $11)`,
+      [
+        TITLE,
+        formData.image,
+        formData.name,
+        formData.origin,
+        formData.length,
+        formData.length_unit,
+        formData.width,
+        formData.width_unit,
+        formData.height,
+        formData.height_unit,
+        formData.role,
+      ]
+    );
+
     {
-      tag2 = "none"
+      tag2 = null
         ? db.query(
             `INSERT INTO tag_junction (article_title, tag_id) 
       VALUES ($1, $2)`,
@@ -143,8 +194,83 @@ export default async function NewArticlePage() {
         <label htmlFor="">image discription: </label>
         <input type="text" name="alt3" id="alt3" className="text-black" />
 
+        <div className="flex flex-col">
+          <h2>Info Box</h2>
+          <label htmlFor="info_image">Info Box Image:</label>
+          <input
+            type="url"
+            name="info_image"
+            id="info_image"
+            placeholder="Enter the url of the info box image"
+          />
+          <label htmlFor="info_name">Full Ship Name:</label>
+          <input
+            type="text"
+            name="info_name"
+            id="info_name"
+            placeholder="Enter the name of the ship as it will appear in the info box"
+            required
+          />
+          <label htmlFor="info_origin">Ship origin:</label>
+          <input
+            type="text"
+            name="info_origin"
+            id="info_origin"
+            placeholder="Enter the franchise, media, or universe the ship is from"
+            required
+          />
+          <div className="flex flex-row flex-nowrap">
+            <label htmlFor="info_length">Ship length:</label>
+            <input type="number" name="info_length" id="info_length" required />
+            <label htmlFor="length_unit">Units:</label>
+            <select name="length_unit" id="length_unit">
+              <option value="cm">cm</option>
+              <option value="m">m</option>
+              <option value="km">km</option>
+              <option value="in">in</option>
+              <option value="ft">ft</option>
+              <option value="miles">miles</option>
+            </select>
+          </div>
+
+          <div className="flex flex-row flex-nowrap">
+            <label htmlFor="info_width">Ship width:</label>
+            <input type="number" name="info_width" id="info_width" required />
+            <label htmlFor="width_unit">Units:</label>
+            <select name="width_unit" id="width_unit">
+              <option value="cm">cm</option>
+              <option value="m">m</option>
+              <option value="km">km</option>
+              <option value="in">in</option>
+              <option value="ft">ft</option>
+              <option value="miles">miles</option>
+            </select>
+          </div>
+
+          <div className="flex flex-row flex-nowrap">
+            <label htmlFor="info_height">Ship height:</label>
+            <input type="number" name="info_height" id="info_height" required />
+            <label htmlFor="height_unit">Units:</label>
+            <select name="height_unit" id="height_unit">
+              <option value="cm">cm</option>
+              <option value="m">m</option>
+              <option value="km">km</option>
+              <option value="in">in</option>
+              <option value="ft">ft</option>
+              <option value="miles">miles</option>
+            </select>
+          </div>
+          <label htmlFor="info_role">Ship Role/Class:</label>
+          <input
+            type="text"
+            name="info_role"
+            id="info_role"
+            placeholder="E.g. Battleship, Light Cruiser, Exploration Vessel"
+          />
+        </div>
+
         <label htmlFor="tag1">Select a tag</label>
-        <select id="tag1" name="tag1">
+        <select id="tag1" name="tag1" required>
           {tagList.map((tag) => (
             <option key={tag.id} value={tag.id}>
               {tag.tag_name}
@@ -153,8 +279,8 @@ export default async function NewArticlePage() {
         </select>
 
         <label htmlFor="tag2">Select a second tag, or leave it blank</label>
-        <select id="tag2" name="tag2">
-          <option value="none">N/A</option>
+        <select id="tag2" name="tag2" required>
+          <option value={null}>N/A</option>
           {tagList.map((tag) => (
             <option key={tag.id} value={tag.id}>
               {tag.tag_name}
