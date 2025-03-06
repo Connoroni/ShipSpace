@@ -30,6 +30,7 @@ export default function Header() {
         </div>
       </div>
       <nav className={styles.nav}>
+        <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/tags">Tags</Link>
         <Link href="/spaceships">Space Ships</Link>

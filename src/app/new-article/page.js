@@ -21,8 +21,8 @@ export default function NewArticlePage()  {
               sub3: formValues.get("sub3"),
               content3: formValues.get("content3"),
               img3: formValues.get("img3"),
-              alt3: formValues.et("alt3"),
-              
+              alt3: formValues.get("alt3"),
+
               };
 
               db.query(
@@ -30,15 +30,15 @@ export default function NewArticlePage()  {
                 [
                   formData.title,
                   formData.intro,
-                  formData.subt1,
+                  formData.sub1,
                   formData.content1,
                   formData.img1,
                   formData.alt1,
-                  formData.subt2,
+                  formData.sub2,
                   formData.content2,
                   formData.img2,
                   formData.alt2,
-                  formData.subt3,
+                  formData.sub3,
                   formData.content3,
                   formData.img3,
                   formData.alt3
@@ -103,14 +103,14 @@ export default function NewArticlePage()  {
 
                     <label htmlFor="">image: </label>
                     <input type="URL" 
-                    name="img1" 
-                    id="img1" 
+                    name="img2" 
+                    id="img2" 
                     className="text-black"/>
 
                     <label htmlFor="">image discription: </label>
                     <input type="text" 
-                    name="alt1" 
-                    id="alt" 
+                    name="alt2" 
+                    id="alt2" 
                     className="text-black"/>
 
                    <label htmlFor="">Subheading3: </label>
@@ -128,14 +128,14 @@ export default function NewArticlePage()  {
 
                     <label htmlFor="">image: </label>
                     <input type="URL" 
-                    name="img1" 
-                    id="img1" 
+                    name="img3" 
+                    id="img3" 
                     className="text-black"/>
 
                     <label htmlFor="">image discription: </label>
                     <input type="text" 
-                    name="alt1" 
-                    id="alt" 
+                    name="alt3" 
+                    id="alt3" 
                     className="text-black"/>
 
 
